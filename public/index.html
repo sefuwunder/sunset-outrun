@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Sunset OutRun</title>
+<link rel="icon" href="data:,">
+<style>
+  html, body { margin: 0; padding: 0; background: #0b0618; height: 100%; overflow: hidden;
+    font-family: "Arial Black", Arial, sans-serif; -webkit-user-select: none; user-select: none; }
+  #wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  #game { image-rendering: auto; max-width: 100vw; max-height: 100vh; aspect-ratio: 16/9;
+    width: min(100vw, 177.78vh); touch-action: none; }
+  #touch { display: none; position: fixed; inset: 0; pointer-events: none; z-index: 10; }
+  .tbtn { position: absolute; pointer-events: auto; background: rgba(255,255,255,0.14);
+    border: 2px solid rgba(255,255,255,0.35); border-radius: 14px; color: #fff;
+    font-size: 22px; display: flex; align-items: center; justify-content: center;
+    width: 76px; height: 76px; touch-action: none; }
+  .tbtn:active { background: rgba(255,180,90,0.4); }
+  #t-left { left: 14px; bottom: 90px; }
+  #t-right { left: 104px; bottom: 90px; }
+  #t-gas { right: 14px; bottom: 90px; background: rgba(80,200,120,0.2); }
+  #t-brake { right: 104px; bottom: 90px; background: rgba(220,60,60,0.2); }
+  #t-start { right: 14px; top: 14px; width: 60px; height: 44px; font-size: 15px; }
+</style>
+</head>
+<body>
+<div id="wrap"><canvas id="game" width="960" height="540"></canvas></div>
+<div id="touch">
+  <div class="tbtn" id="t-left">◀</div>
+  <div class="tbtn" id="t-right">▶</div>
+  <div class="tbtn" id="t-gas">GAS</div>
+  <div class="tbtn" id="t-brake">BRK</div>
+  <div class="tbtn" id="t-start">START</div>
+</div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
